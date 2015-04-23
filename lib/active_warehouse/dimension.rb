@@ -243,7 +243,7 @@ module ActiveWarehouse #:nodoc
 
 
         #return "All #{(levels[parent_values.length + 1 ]).to_s.pluralize.titleize}" if child_level.is_a? Array and child_level.empty?
-        return "Totals" if child_level.is_a? Array and child_level.empty?
+        return ["Totals"] if child_level.is_a? Array and child_level.empty?
 
         # Create the conditions array. Will work with 1.1.6.
         conditions_parts = []
