@@ -31,7 +31,7 @@ module ActiveWarehouse::View
       data_rows = []
       table_view.data_rows.each do |data_row|
         data = {}
-        data[:row_dimension_key] = link_to_if(table_view.row_dimension.has_children?, data_row.dimension_value, table_view.row_link(data_row.dimension_value == "Totals" ? "" : data_row.dimension_value))
+        data[:row_dimension_key] = link_to_if(table_view.row_dimension.has_children?, data_row.dimension_value.html_safe, table_view.row_link(data_row.dimension_value == "Totals" ? "" : data_row.dimension_value))
         data[:row_dimension_label] = data_row.dimension_value
 
         data_row.cells.each_with_index do |cell, index| # aggregated facts
